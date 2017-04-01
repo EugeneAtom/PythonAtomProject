@@ -21,6 +21,7 @@ def get_dataset():
     except OSError:
         raise OSError
 
+
 if __name__ == '__main__':
     dataset = list(get_dataset())
     for data in dataset:

@@ -64,7 +64,7 @@ dataset = list(get_dataset())
 
 class WSGIApplication(object):
     default_headers = [
-        ('Content-Type', 'text/html'),
+        ('Content-Type', 'text/plain'),
         ('Server', 'WSGIExample/1.0'),
     ]
 
@@ -85,6 +85,7 @@ class WSGIApplication(object):
 
 
 from wsgiref.simple_server import make_server
+
 if __name__ == '__main__':
     http_server = make_server('127.0.0.1', 1997, WSGIApplication)
     http_server.handle_request()
