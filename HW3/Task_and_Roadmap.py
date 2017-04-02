@@ -1,11 +1,15 @@
 from datetime import date, timedelta
 
+possible_states = ('in_progress', 'ready')
+
 
 class Task:
     def __init__(self, _title, _estimate, _state='in_progress'):
+        assert isinstance(_title, type("")), "Incorrect type of title"
         self.title = _title
         assert isinstance(_estimate, type(date.today())), "Incorrect type of estimate"
         self.estimate = _estimate
+        assert _state in possible_states, "Impossible state"
         self.state = _state
 
     @property
